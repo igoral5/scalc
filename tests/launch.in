@@ -1,0 +1,33 @@
+#!/bin/sh
+exitstatus=0
+
+@PROGRAM_APACHE2@ -d @PROJECT_BINARY_DIR@ -f @PROJECT_BINARY_DIR@/tests/httpd.conf
+
+sleep 1
+
+./test_speed http://localhost:1999/calcserver "2+2" "Evalute[0] : 4" 1
+
+if [ $? != 0 ]; then 
+	echo 'test_speed failed'; 
+	exitstatus=1;
+	kill `cat apache.pid`
+	rm -fR apache.pid apacheerror.log dynamic
+	exit $exitstatus
+fi
+
+./test_speed http://localhost:1999/calcserver "sin(gtor(30))" "Evalute[0] : 0.5" 1
+
+if [ $? != 0 ]; then 
+	echo 'test_speed failed'; 
+	exitstatus=1;
+	kill `cat apache.pid`
+	rm -fR apache.pid apacheerror.log dynamic
+	exit $exitstatus
+fi
+
+
+kill `cat apache.pid`
+
+rm -fR apache.pid apacheerror.log dynamic
+
+exit $exitstatus

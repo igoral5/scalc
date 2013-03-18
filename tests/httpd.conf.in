@@ -1,0 +1,11 @@
+LockFile apache.lock
+PidFile apache.pid
+ErrorLog apacheerror.log
+LoadModule fastcgi_module @MODULE_APACHE2_FASTCGI@
+FastCgiIpcDir @PROJECT_BINARY_DIR@
+Listen 1999
+<VirtualHost 127.0.0.1>
+	DocumentRoot @PROJECT_BINARY_DIR@
+	ServerName localhost
+	FastCgiServer calcserver
+</VirtualHost>
