@@ -1,3 +1,6 @@
+/.cproject
+/.project
+/.settings
 /_CPack_Packages
 /CMakeFiles
 /Testing
