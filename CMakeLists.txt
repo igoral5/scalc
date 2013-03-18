@@ -183,7 +183,7 @@ set (CPACK_SOURCE_PACKAGE_FILE_NAME
   "${CMAKE_PROJECT_NAME}-${CPACK_PACKAGE_VERSION_MAJOR}.${CPACK_PACKAGE_VERSION_MINOR}.${CPACK_PACKAGE_VERSION_PATCH}")
 
 set ( CPACK_SOURCE_IGNORE_FILES
-    "CMakeFiles;Testing;_CPack_Packages;CMakeCache.txt;Makefile;install_manifest.txt;.cmake$;.wsdl$;.cc$;.hh$;httpd.conf$;launch$;.cproject;.project;.xml$;.nsmap$;calcclient$;calcserver$;test_speed$;.xsd$;scalc-.+-.+$;soapC;soapH;soapcalcProxy;soapcalcService;soapStub;${CPACK_SOURCE_IGNORE_FILES}" )
+    ".git;CMakeFiles;Testing;_CPack_Packages;CMakeCache.txt;Makefile;install_manifest.txt;.cmake$;.wsdl$;.cc$;.hh$;httpd.conf$;launch$;.cproject;.project;.xml$;.nsmap$;calcclient$;calcserver$;test_speed$;.xsd$;scalc-.+$;soapC;soapH;soapcalcProxy;soapcalcService;soapStub;${CPACK_SOURCE_IGNORE_FILES}" )
 include (CPack)
 
 

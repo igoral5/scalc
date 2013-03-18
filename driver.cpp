@@ -13,6 +13,7 @@ Driver::Driver(class PtrCalcContext& _calc, std::ostream& out)
     : trace_scanning(false),
       trace_parsing(false),
       trace_evalute(false),
+      lexer( 0 ),
       calc(_calc),
       out_(out)
 {
